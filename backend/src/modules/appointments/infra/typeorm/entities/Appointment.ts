@@ -24,6 +24,13 @@ class Appointment {
   // se for para buscar todos os agendamentos (appointments) de um usuário especifico,
   // no User.ts o => @OneToMany
 
+  @Column()
+  user_id: string;
+
+  @ManyToOne(() => User)
+  @JoinColumn({ name: 'user_id' })
+  user: User;
+
   @Column('timestamp with time zone')
   date: Date;
 

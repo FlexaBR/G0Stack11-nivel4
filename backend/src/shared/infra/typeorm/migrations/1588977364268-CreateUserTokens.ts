@@ -70,7 +70,7 @@ export default class CreateUserTokens1588977364268
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropIndex('user_tokens', 'IDX_CLIENTE_FANTASIA');
+    await queryRunner.dropIndex('user_tokens', 'IDX_TOKEN_USERID');
     await queryRunner.dropForeignKey('user_tokens', 'TokenUser');
     await queryRunner.dropTable('user_tokens');
   }
